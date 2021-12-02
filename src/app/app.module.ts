@@ -12,6 +12,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { RutaComponent } from './components/ruta/ruta.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import{FormsModule, ReactiveFormsModule,FormBuilder,
   FormGroup,
   FormArray,
@@ -47,7 +48,7 @@ const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
       apiKey: 'AIzaSyBWSSUndNg-8FWlbcWtK8WXuc48YpAfIvk'
     })
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
