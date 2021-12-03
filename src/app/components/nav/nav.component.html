@@ -14,7 +14,6 @@
                      
                       <li *ngIf="estado"><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" [routerLink]="['/principal']">Principal</a></li>
                       <li *ngIf="estado"><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#" (click)="logout()">Cerrar Sesión</a></li>
-                      <li *ngIf="estado"><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" [routerLink]="['/principal']">Principal</a></li>
                 </ul>
                 <ng-template #desconectado>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
