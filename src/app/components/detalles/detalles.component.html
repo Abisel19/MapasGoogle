@@ -1,0 +1,117 @@
+<app-nav></app-nav>
+
+<main class="profile-page">
+  <section class="relative block h-500-px">
+    <div *ngFor="let dato of intento; let i = index;">
+    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+            background-image: url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference={{dato.photos[0].photo_reference}}&key=AIzaSyBWSSUndNg-8FWlbcWtK8WXuc48YpAfIvk');">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-25 bg-black"></span>
+    </div>
+  </div>
+  </section>
+  <section class="relative py-16 bg-blueGray-200">
+    <div class="container mx-auto px-4">
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="px-6">
+          <div class="text-center mt-12">
+            <div class="flex justify-center md:justify-center -mt-20">
+              <div *ngFor="let dato of intento| slice:0:1">
+                <img class="w-40 h-40 object-cover rounded-full" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference={{dato.photos[1].photo_reference}}&key=AIzaSyBWSSUndNg-8FWlbcWtK8WXuc48YpAfIvk">
+              </div>
+            </div>
+            <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+              <div *ngFor="let dato of intento">
+                {{dato.name}}
+              </div>
+            </h3>
+            <div class="text-sm leading-normal mt-4 mb-4 text-blueGray-400 font-bold uppercase">
+              <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
+              <div *ngFor="let dato of intento">
+                {{dato.formatted_address}}           
+            </div>
+          </div>
+            <div class="mb-2 text-blueGray-600 mt-10">
+              
+            </div>
+            <div class="mb-2 text-blueGray-600">
+              <i class="fas fa-star text-lg text-blueGray-400"><p>Rating:</p>
+              <div *ngFor="let dato of intento.slice(0,2);">
+                {{dato.rating}}           
+              </div>  
+            </i>
+            </div>
+          </div>
+          <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
+            <div class="flex flex-wrap justify-center">
+              <div class="w-full lg:w-9/12 px-4">           
+                <div *ngFor="let dato of intento | slice:0:1">
+                    {{dato.name}}
+                  </div>
+                <a [routerLink]="['/ruta']" >
+                  <div class="rounded-full bg-indigo-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i class="mdi mdi-fire text-base align-middle"></i> <span class="align-middle">Mostrar Ubicación</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">Reseñas:</h3>
+      </div>
+
+    <div class="flex justify-center">
+      <div *ngFor="let dato of intento | slice:0:1">
+      <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+        <div class="flex justify-center md:justify-end -mt-16">
+          <img class="w-20 h-20 object-cover rounded-full border-indigo-500" src="{{dato.reviews[0].profile_photo_url}}">
+        </div>
+        <div>
+          <h2 class="text-gray-800 text-xl font-semibold">{{dato.reviews[0].author_name}}</h2>
+          <p class="mt-2 text-gray-600">{{dato.reviews[0].text}}</p>
+        </div>
+      </div>
+
+      <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+        <div class="flex justify-center md:justify-end -mt-16">
+          <img class="w-20 h-20 object-cover rounded-full border-indigo-500" src="{{dato.reviews[1].profile_photo_url}}">
+        </div>
+        <div>
+          <h2 class="text-gray-800 text-xl font-semibold">{{dato.reviews[1].author_name}}</h2>
+          <p class="mt-2 text-gray-600">{{dato.reviews[1].text}}</p>
+        </div>
+      </div>
+
+      <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+        <div class="flex justify-center md:justify-end -mt-16">
+          <img class="w-20 h-20 object-cover rounded-full border-indigo-500" src="{{dato.reviews[2].profile_photo_url}}">
+        </div>
+        <div>
+          <h2 class="text-gray-800 text-xl font-semibold">{{dato.reviews[2].author_name}}</h2>
+          <p class="mt-2 text-gray-600">{{dato.reviews[2].text}}</p>
+        </div>
+      </div>
+
+      <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+        <div class="flex justify-center md:justify-end -mt-16">
+          <img class="w-20 h-20 object-cover rounded-full border-indigo-500" src="{{dato.reviews[3].profile_photo_url}}">
+        </div>
+        <div>
+          <h2 class="text-gray-800 text-xl font-semibold">{{dato.reviews[3].author_name}}</h2>
+          <p class="mt-2 text-gray-600">{{dato.reviews[3].text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </section>
+</main>
+
+
+
+
+<app-footer></app-footer>
+
+

@@ -10,6 +10,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 
 import { PrincipalComponent } from './components/principal/principal.component';
 import { RutaComponent } from './components/ruta/ruta.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path: 'perfil',component: PerfilComponent, 
+  },
+  {
+    path: 'detalles/:place_id',component: DetallesComponent, 
   },
   {
     path: '',

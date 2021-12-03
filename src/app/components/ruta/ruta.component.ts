@@ -3,6 +3,9 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
 import { LocationService } from 'src/app/services/location.service';
 import { Ruta } from 'src/app/models/ruta';
+import { MapsService } from 'src/app/services/maps.service';
+import { ThrowStmt } from '@angular/compiler';
+
 declare var google;
 
 @Component({
@@ -15,12 +18,28 @@ export class RutaComponent implements OnInit{
   public lat=0;
   public lng=-0;
   origin = { lat: this.lat, lng:this.lng };
-  destination = { lat: 21.129547, lng: -86.817013 };
+  destination = { lat: null, lng: null };
   directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer();
-
+  public data;
+  public datita;
   
-  constructor(public locationService: LocationService) {
+  constructor(public locationService: LocationService, public mapita:MapsService) {
+    this.data = mapita.getLocation();
+    this.datita = mapita.getLgn();
+    console.log(this.data);
+    if(this.data && this.datita){
+      this.destination = {
+        lat:this.data ,
+        lng: this.datita,
+      };
+    }else {
+      this.destination = {
+        lat: 21.129547 ,
+        lng: -86.817013,
+      };
+    }
+   
   }
   
   getLocation() {
