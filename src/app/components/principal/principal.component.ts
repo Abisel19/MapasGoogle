@@ -34,7 +34,7 @@ export class PrincipalComponent implements OnInit {
   }
 
   obtenerRuta(){
-    this.id1='ChIJz0DQy_UoTI8REdhmjYitQPQ';
+    this.id1='ChIJmWs71vErTI8Rv7d4a3Auw2w';
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${this.id1}&fields=place_id%2Cname%2Cgeometry%2Copening_hours%2Cformatted_address%2Creviews%2Cphotos&key=AIzaSyBWSSUndNg-8FWlbcWtK8WXuc48YpAfIvk`;
     this.http.get(proxyurl + url).subscribe(data=>{

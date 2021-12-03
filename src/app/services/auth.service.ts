@@ -72,7 +72,7 @@ export class AuthService {
    
   }
   registro(usuario: User){
-    this.http.post<User>('http://localhost:8000/api/register',usuario).subscribe(data=>{
+    this.http.post<User>('https://enrique-dev.com/api/register',usuario).subscribe(data=>{
       setTimeout(()=>{
         this.router.navigate(['/principal']).then(()=>{
           window.location.reload();
@@ -86,7 +86,7 @@ export class AuthService {
     
   }
   login(usuario: User){
-    this.http.post<User>('http://localhost:8000/api/login',usuario).subscribe(data=>{
+    this.http.post<User>('https://enrique-dev.com/api/login',usuario).subscribe(data=>{
       setTimeout(()=>{
         this.router.navigate(['/principal']).then(()=>{
           window.location.reload();

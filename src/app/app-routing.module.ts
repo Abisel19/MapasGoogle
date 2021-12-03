@@ -11,6 +11,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { RutaComponent } from './components/ruta/ruta.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
+import { MarketComponent } from './components/market/market.component';
 
 
 const routes: Routes = [
@@ -24,19 +25,22 @@ const routes: Routes = [
     path: 'home',component: HomeComponent,canActivate: [AuthGuard]
   },
   {
-    path: 'inicio',component: InicioComponent, 
+    path: 'inicio',component: InicioComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'ruta',component: RutaComponent
+    path: 'ruta',component: RutaComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'principal',component: PrincipalComponent
+    path: 'principal',component: PrincipalComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'perfil',component: PerfilComponent, 
+    path: 'perfil',component: PerfilComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'detalles/:place_id',component: DetallesComponent, 
+    path: 'detalles/:place_id',component: DetallesComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'market',component: MarketComponent, canActivate: [AuthGuard]
   },
   {
     path: '',

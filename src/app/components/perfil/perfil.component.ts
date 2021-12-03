@@ -38,7 +38,7 @@ export class PerfilComponent implements OnInit {
     this.obteneruser();
   }
 obteneruser(){
-  this.http.get('http://localhost:8000/api/perfil',this.httpOptions).subscribe(data=>{
+  this.http.get('https://enrique-dev.com/api/perfil',this.httpOptions).subscribe(data=>{
    console.log(data['id']);
    let customObj = new User(
     data['id'],

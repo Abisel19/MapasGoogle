@@ -21,10 +21,11 @@ import{FormsModule, ReactiveFormsModule,FormBuilder,
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
+import { MarketComponent } from './components/market/market.component';
   
 
 
-const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
+const config: SocketIoConfig = {url: 'https://enrique-dev.com', options: {}};
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
     RutaComponent,
     PerfilComponent,
     FooterComponent,
-    DetallesComponent
+    DetallesComponent,
+    MarketComponent
   ],
   imports: [
     HttpClientModule,
