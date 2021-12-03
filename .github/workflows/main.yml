@@ -1,0 +1,23 @@
+name: Deployment
+on:
+  push: 
+     branches: [master]
+     
+     
+jobs:
+  job_one: 
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing transportes server ssh connection
+        uses: appleboy/ssh-action@master
+        with:
+          host: 23.20.191.248
+          username: root
+          key: ${{secrets.KEY_SECRET}}
+          port: 22
+          script: |
+            sudo su
+            cd ..
+            cd ../home/admin/web/transporte.enrique-dev.com/public_html
+            git pull origin main
