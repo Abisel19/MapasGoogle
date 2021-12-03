@@ -13,14 +13,18 @@
               </div>
             </div>
           </div>
+          <div *ngFor="let item of users; let i = index;">
           <div class="text-center mt-12">
-            <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-              Nombre Usuario: 
-            </h3>
+              <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+                Nombre Usuario:{{item.name}} 
+              </h3>
+            
+            
             <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
               <i class="fas fa-envelope-square mr-2 text-lg text-blueGray-400"></i>
-              Correo: 
+              Correo: {{item.email}}
             </div>
+          </div>
           </div>
         </div>
       </div>

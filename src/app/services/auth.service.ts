@@ -67,6 +67,10 @@ export class AuthService {
     }
     return this.token;
   }
+  obtenerUser(token:string){
+
+   
+  }
   registro(usuario: User){
     this.http.post<User>('http://localhost:8000/api/register',usuario).subscribe(data=>{
       setTimeout(()=>{
